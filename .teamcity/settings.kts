@@ -463,6 +463,7 @@ object TemplateTests : Template({
         }
         script {
             id = "simpleRunner"
+            enabled = false
             scriptContent = "echo '%remoteParam%' > meow.txt"
         }
     }
