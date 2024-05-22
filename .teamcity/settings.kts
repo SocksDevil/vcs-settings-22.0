@@ -411,6 +411,8 @@ object Build : BuildType({
             param("connectionId", "PROJECT_EXT_37")
         }
     }
+    
+    disableSettings("simpleRunner")
 })
 
 object TemplateTests : Template({
