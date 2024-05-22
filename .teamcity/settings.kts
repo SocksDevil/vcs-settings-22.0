@@ -13,7 +13,6 @@ import jetbrains.buildServer.configs.kotlin.projectFeatures.eventLog
 import jetbrains.buildServer.configs.kotlin.projectFeatures.githubConnection
 import jetbrains.buildServer.configs.kotlin.projectFeatures.hashiCorpVaultConnection
 import jetbrains.buildServer.configs.kotlin.projectFeatures.s3Storage
-import jetbrains.buildServer.configs.kotlin.remoteParameters.hashiCorpVaultParameter
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
 import jetbrains.buildServer.configs.kotlin.vcs.PerforceVcsRoot
@@ -425,10 +424,6 @@ object TemplateTests : Template({
     """.trimIndent()
 
     params {
-        hashiCorpVaultParameter {
-            name = "remoteParamTemplate"
-            query = "meowmeow"
-        }
         param("teamcity.vault.set.env", "false")
         param("inheritedParamTest", "meow")
         param("teamcity.vault.ssh.set.env", "true")
