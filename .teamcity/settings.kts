@@ -61,6 +61,10 @@ project {
         param("teamcity.internal.parameters.newDialog.enabled", "true")
         param("teamcity.internal.kubernetes.executor.enabled", "true")
         param("teamcity.internal.telemetry.events.otlp.enabled", "true")
+        hashiCorpVaultParameter {
+            name = "remoteParamInProject"
+            query = "test"
+        }
         param("teamcity.internal.executor.enabled", "true")
         param("teamcity.internal.telemetry.traces.internal.enabled", "true")
         text("Regex", "regex",
