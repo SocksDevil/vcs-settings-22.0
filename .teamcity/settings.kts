@@ -378,6 +378,10 @@ object Build : BuildType({
     name = "Build"
 
     params {
+        hashiCorpVaultParameter {
+            name = "remote"
+            query = "meowmeow"
+        }
         param("inheritedParamTest", "meow")
     }
 
