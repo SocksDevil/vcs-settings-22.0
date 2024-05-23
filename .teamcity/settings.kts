@@ -13,6 +13,7 @@ import jetbrains.buildServer.configs.kotlin.projectFeatures.eventLog
 import jetbrains.buildServer.configs.kotlin.projectFeatures.githubConnection
 import jetbrains.buildServer.configs.kotlin.projectFeatures.hashiCorpVaultConnection
 import jetbrains.buildServer.configs.kotlin.projectFeatures.s3Storage
+import jetbrains.buildServer.configs.kotlin.remoteParameters.hashiCorpVaultParameter
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
 import jetbrains.buildServer.configs.kotlin.vcs.PerforceVcsRoot
@@ -160,7 +161,7 @@ project {
         hashiCorpVaultConnection {
             id = "PROJECT_EXT_20"
             name = "HashiCorp Vault - ldap"
-            vaultId = "ldap"
+            namespace = "ldap"
             authMethod = ldap {
                 path = "path"
                 username = "username"
@@ -399,7 +400,7 @@ object Build : BuildType({
             enabled = false
             scriptContent = "echo %vaultConnection2% > meias.txt"
         }
-        stepsOrder = arrayListOf("RUNNER_1", "RUNNER_2", "RUNNER_3", "simpleRunner")
+        stepsOrder = arrayListOf("RUNNER_1", "RUNNER_2", "RUNNER_3")
     }
 
     features {
@@ -427,6 +428,10 @@ object TemplateTests : Template({
         param("teamcity.vault.set.env", "false")
         param("inheritedParamTest", "meow")
         param("teamcity.vault.ssh.set.env", "true")
+        hashiCorpVaultParameter {
+            name = "remoteParam"
+            query = "meow"
+        }
     }
 
     vcs {
