@@ -385,7 +385,7 @@ object Build : BuildType({
         param("inheritedParamTest", "meow")
         hashiCorpVaultParameter {
             name = "remoteParamInProject"
-            query = "meowMeow"
+            query = "meowMeow!"
         }
     }
 
