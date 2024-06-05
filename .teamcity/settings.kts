@@ -60,11 +60,11 @@ project {
         text("teamcity.internal.aws.connection.allowedForSubProjectsEnabled", "true", allowEmpty = true)
         param("teamcity.internal.parameters.newDialog.enabled", "true")
         param("teamcity.internal.kubernetes.executor.enabled", "true")
-        param("teamcity.internal.telemetry.events.otlp.enabled", "true")
         hashiCorpVaultParameter {
             name = "remoteParamInProject"
             query = "test"
         }
+        param("teamcity.internal.telemetry.events.otlp.enabled", "true")
         param("teamcity.internal.executor.enabled", "true")
         param("teamcity.internal.telemetry.traces.internal.enabled", "true")
         text("Regex", "regex",
@@ -279,6 +279,7 @@ project {
                       # Please refrain from adding new containers, as those can't be added to your build
                     - name: template-container
             """.trimIndent())
+            param("enabled", "false")
         }
         feature {
             id = "PROJECT_EXT_36"
@@ -431,11 +432,11 @@ object TemplateTests : Template({
     params {
         param("teamcity.vault.set.env", "false")
         param("inheritedParamTest", "meow")
-        param("teamcity.vault.ssh.set.env", "true")
         hashiCorpVaultParameter {
             name = "remoteParam"
             query = "meow"
         }
+        param("teamcity.vault.ssh.set.env", "true")
     }
 
     vcs {
