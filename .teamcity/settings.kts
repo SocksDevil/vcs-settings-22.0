@@ -205,23 +205,6 @@ project {
             }
         }
         kubernetesExecutor {
-            id = "PROJECT_EXT_31"
-            connectionId = "PROJECT_EXT_37"
-            profileName = "yaml test"
-            templateContainer = """
-                apiVersion: v1
-                kind: Pod
-                spec:
-                  containers:
-                    - name: template-container
-                      resources:
-                        requests:
-                          memory: 1.5Gi
-            """.trimIndent()
-            buildsLimit = "2"
-            param("system.cloud.profile_id", "PROJECT_EXT_31")
-        }
-        kubernetesExecutor {
             id = "PROJECT_EXT_32"
             connectionId = "PROJECT_EXT_14"
             profileName = "executor"
