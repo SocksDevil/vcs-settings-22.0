@@ -161,7 +161,7 @@ project {
         hashiCorpVaultConnection {
             id = "PROJECT_EXT_20"
             name = "HashiCorp Vault - ldap"
-            vaultId = "ldap"
+            namespace = "ldap"
             authMethod = ldap {
                 path = "path"
                 username = "username"
@@ -290,7 +290,6 @@ project {
                         requests:
                           memory: 1.5Gi
             """.trimIndent()
-            buildsLimit = "10"
             param("system.cloud.profile_id", "PROJECT_EXT_38")
         }
         buildMetrics {
