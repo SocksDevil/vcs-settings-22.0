@@ -247,6 +247,7 @@ project {
                         requests:
                           memory: 1.5Gi
             """.trimIndent()
+            enabled = false
             param("system.cloud.profile_id", "PROJECT_EXT_38")
         }
         buildMetrics {
