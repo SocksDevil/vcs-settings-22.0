@@ -161,7 +161,7 @@ project {
         hashiCorpVaultConnection {
             id = "PROJECT_EXT_20"
             name = "HashiCorp Vault - ldap"
-            namespace = "ldap"
+            vaultId = "ldap"
             authMethod = ldap {
                 path = "path"
                 username = "username"
@@ -206,7 +206,7 @@ project {
         }
         kubernetesExecutor {
             id = "PROJECT_EXT_31"
-            connectionId = "PROJECT_EXT_34"
+            connectionId = "PROJECT_EXT_37"
             profileName = "yaml test"
             templateContainer = """
                 apiVersion: v1
