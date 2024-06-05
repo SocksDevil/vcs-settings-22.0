@@ -61,10 +61,6 @@ project {
         text("teamcity.internal.aws.connection.allowedForSubProjectsEnabled", "true", allowEmpty = true)
         param("teamcity.internal.parameters.newDialog.enabled", "true")
         param("teamcity.internal.kubernetes.executor.enabled", "true")
-        hashiCorpVaultParameter {
-            name = "remoteParamInProject"
-            query = "test"
-        }
         param("teamcity.internal.telemetry.events.otlp.enabled", "true")
         param("teamcity.internal.executor.enabled", "true")
         param("teamcity.internal.telemetry.traces.internal.enabled", "true")
@@ -166,7 +162,7 @@ project {
         hashiCorpVaultConnection {
             id = "PROJECT_EXT_20"
             name = "HashiCorp Vault - ldap"
-            vaultId = "ldap"
+            namespace = "ldap"
             authMethod = ldap {
                 path = "path"
                 username = "username"
