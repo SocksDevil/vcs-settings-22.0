@@ -275,7 +275,7 @@ project {
         }
         kubernetesExecutor {
             id = "PROJECT_EXT_38"
-            connectionId = "PROJECT_EXT_14"
+            connectionId = "PROJECT_EXT_37"
             profileName = "myKube"
             templateContainer = """
                 apiVersion: v1
