@@ -219,13 +219,6 @@ project {
             param("secure:oidcClientSecret", "credentialsJSON:cdc8761b-d16c-4e14-92d8-599f6c033dd7")
             param("providerType", "KubernetesConnection")
         }
-        kubernetesExecutor {
-            id = "PROJECT_EXT_36"
-            connectionId = "PROJECT_EXT_14"
-            profileName = "meowmoew"
-            enabled = false
-            param("system.cloud.profile_id", "PROJECT_EXT_36")
-        }
         feature {
             id = "PROJECT_EXT_37"
             type = "OAuthProvider"
