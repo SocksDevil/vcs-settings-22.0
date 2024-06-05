@@ -216,7 +216,7 @@ project {
                     - name: template-container
                       resources:
                         requests:
-                          memory: 3Gi
+                          memory: 1.5Gi
             """.trimIndent()
             buildsLimit = "2"
             param("system.cloud.profile_id", "PROJECT_EXT_31")
