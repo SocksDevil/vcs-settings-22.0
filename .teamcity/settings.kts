@@ -276,7 +276,7 @@ project {
         kubernetesExecutor {
             id = "PROJECT_EXT_38"
             connectionId = "PROJECT_EXT_37"
-            profileName = "myKub"
+            profileName = "myKube"
             templateContainer = """
                 apiVersion: v1
                 kind: Pod
@@ -291,6 +291,7 @@ project {
                           memory: 1.5Gi
             """.trimIndent()
             buildsLimit = "10"
+            param("system.cloud.profile_id", "PROJECT_EXT_38")
         }
         buildMetrics {
             id = "PROJECT_EXT_7"
